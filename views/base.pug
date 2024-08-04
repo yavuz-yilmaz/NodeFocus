@@ -1,0 +1,68 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title NodeFocus
+    link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", rel="stylesheet")
+    style.
+      body {
+      background-color: #f8f9fa;
+      }
+      .main-content {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+      .btn-custom {
+      margin: 10px;
+      }
+      .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .timeText {
+        text-align: center;
+      }
+      .taskText {
+        text-align: center;
+      }
+      .main-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .add-task {
+        margin-bottom: 10px;
+      }
+      .addTask {
+        width: 280px;
+      }
+      .task-button-group {
+        display: flex;
+        gap: 10px;
+      }
+      .invisible {
+        display: none;
+      }
+      .loggedInText {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+  body
+    include _header
+    
+    block content
+      h1 A placeholder
+    script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")

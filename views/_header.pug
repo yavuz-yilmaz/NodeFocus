@@ -1,0 +1,16 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    a.navbar-brand(href="/") NodeFocus
+    .collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+            if user 
+                li.nav-item.loggedInText
+                    p(style='margin-top: 10px;') Logged in as #{user.username}
+                li.nav-item
+                    a#logoutButton.btn.btn-outline-primary.btn-custom Logout
+                script(src='/js/axios.min.js')
+                script(src='/js/logout.js')
+            else
+                li.nav-item
+                    a.btn.btn-outline-primary.btn-custom(href='/login') Login
+                li.nav-item
+                    a.btn.btn-primary.btn-custom(href='/signup') Sign Up

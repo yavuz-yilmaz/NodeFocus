@@ -1,0 +1,38 @@
+extends base
+
+block content
+
+    if user
+        div#user_id.user_id(style="display: none;")= user._id
+        .container 
+            p#taskText.taskText Current task: none
+            h1#timeText.timeText 25:00
+            .main-buttons
+                button#startTimer.btn.btn-primary Start
+                button#pauseTimer.btn.btn-secondary Pause
+                button#saveTimer.btn.btn-danger Save
+                button#skipBreak.btn.btn-warning Skip
+        .container 
+            p Tasks
+            .add-task
+                form(id="addTaskForm", action="javascript:void(0);")
+                    input#addTask.addTask(placeholder= 'Add Task' required)
+                    button.btn.btn-primary(type="submit") Add
+            .list-group
+                each task in tasks
+                    .task-item
+                        div#task_id.task_id.invisible= task._id
+                        li.list-group-item.d-flex.justify-content-between.align-items-center
+                            h4.taskHeader= task.name
+                            .task-button-group
+                                button#selectTaskButton.btn.btn-primary.selectTaskButton Select
+                                button#deleteTaskButton.btn.btn-danger.deleteTaskButton Delete
+        script(src="/js/axios.min.js")
+        script(src="/js/pomodoro.js")
+    else
+        .main-content
+            h1 Welcome to NodeFocus
+            p Boost your productivity using the Pomodoro technique.
+            div
+                a.btn.btn-outline-primary.btn-custom(href='/login') Login
+                a.btn.btn-primary.btn-custom(href='/signup') Sign Up

@@ -1,0 +1,26 @@
+extends base
+
+block content
+    .container
+        .signup-container
+            h2.text-center Sign Up
+            form(id="signupForm")
+                .form-group
+                    label(for="username") Username
+                    input#username.form-control(type="text", placeholder="Enter username", required)
+                .form-group
+                    label(for="email") Email address
+                    input#email.form-control(type="email", placeholder="Enter email", required)
+                .form-group
+                    label(for="password") Password
+                    input#password.form-control(type="password", placeholder="Enter password", required)
+                .form-group
+                    label(for="passwordConfirm") Confirm Password
+                    input#passwordConfirm.form-control(type="password", placeholder="Confirm password", required)
+                button.btn.btn-primary.btn-block(type="submit")
+                    | Sign Up
+            p.text-center.mt-3
+                | Already have an account?
+                a(href="login") Login
+    script(src="/js/axios.min.js")
+    script(type="module" src="/js/register.js")
